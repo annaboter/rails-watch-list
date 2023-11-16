@@ -1,11 +1,12 @@
 <%# show movie title associated with bookmark %>
-
+<h1><%= @list.name %></h1>
 <%# i need to show my all bookmarks associated with the right list and movie  %>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
-    <li><%= bookmark.comment %></li>
+    <li> <strong><%= bookmark.movie.title %></strong> <br> <%= bookmark.comment %> </li>
   <% end %>
 </ul>
 
 <%= link_to "Back to my list", lists_path %>
+<br>
 <%= link_to "Add new bookmark", new_list_bookmark_path(@list) %>
