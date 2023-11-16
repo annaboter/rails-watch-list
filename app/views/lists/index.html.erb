@@ -1,9 +1,27 @@
-<h1>Movie Lists</h1>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Moove</a>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Add list", new_list_path, class: "nav-link mr-sm-2" %>
+        </li>
+      </ul>
+   </div>
+  </nav>
 
-<ul>
-  <% @lists.each do |list| %>
-     <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+  <div class="card-container">
+    <div class="row">
+      <div class="card col-6">
+        <h1>Yes, we put 'm in a list</h1>
+        <p>Your favorite movies, but this time, they're in a list! What's even better, they're in a list that you made. Never lose sight of your guilty pleasures. Add your own lists and rate them.</p>
+      </div>
 
-<%= link_to "Add new list", new_list_path %>
+      <% @lists.each do |list| %>
+          <div class="card col-6">
+            <p><%= link_to list.name, list_path(list) %></p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
