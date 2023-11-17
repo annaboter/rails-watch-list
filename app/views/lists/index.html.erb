@@ -19,6 +19,7 @@
 
       <% @lists.each do |list| %>
           <div class="card col-6">
+          <%# there should be a cover img that represents the list %>
             <p><%= link_to list.name, list_path(list) %></p>
           </div>
       <% end %>

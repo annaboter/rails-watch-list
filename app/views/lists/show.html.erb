@@ -1,6 +1,5 @@
-<%# show movie title associated with bookmark %>
 <h1><%= @list.name %></h1>
-<%# i need to show my all bookmarks associated with the right list and movie  %>
+<%# there should be a cover img that represents the list %>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
     <li> <strong><%= bookmark.movie.title %></strong> <br> <%= bookmark.comment %> </li>
