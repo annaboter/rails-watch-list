@@ -1,4 +1,5 @@
 <div class="container">
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Moove</a>
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -11,18 +12,26 @@
   </nav>
 
   <div class="card-container">
+
     <div class="row">
-      <div class="card col-6">
-        <h1>Yes, we put 'm in a list</h1>
-        <p>Your favorite movies, but this time, they're in a list! What's even better, they're in a list that you made. Never lose sight of your guilty pleasures. Add your own lists and rate them.</p>
+      <div class="card col-12 p-0">
+        <div class="text-center">
+          <h1>Yes, we put 'm in a list</h1>
+          <p>Your favorite movies, but this time, they're in a list! What's even better, they're in a list that you made. Never lose sight of your guilty pleasures. Add your own lists and rate them.</p>
+        </div>
       </div>
 
-      <% @lists.each do |list| %>
-          <div class="card col-6">
-          <%# there should be a cover img that represents the list %>
-            <p><%= link_to list.name, list_path(list) %></p>
-          </div>
-      <% end %>
+      <div class="p-0">
+        <% @lists.each do |list| %>
+            <div class="list-card card col-6">
+              <%= cl_image_tag list.photo.key, height: 200, width: 200, crop: :fill %>
+              <p><%= link_to list.name, list_path(list) %></p>
+            </div>
+        <% end %>
+      </div>
+
     </div>
+
   </div>
+
 </div>
