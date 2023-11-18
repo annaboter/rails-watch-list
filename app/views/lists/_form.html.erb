@@ -1,5 +1,6 @@
 <%= simple_form_for(@list) do |f|%>
   <%= f.input :name%>
+  <%= f.input :description %>
   <%# should be an option for the user to upload list cover image %>
   <%= f.input :photo, as: :file %>
   <%= f.button :submit, "Create list"%>
